@@ -66,7 +66,7 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
             <h1>Yeap, It's me, Jamil</h1>
-            <h3>&amp; Nope, this is not my backyard</h3>
+            <h3>&amp; Nope, this is not my backyard. Just a nice view.</h3>
             <br>
             <a href="#contact" class="btn btn-dark btn-lg">Contact</a>
         </div>
@@ -81,7 +81,20 @@
                     <h2>Contact</h2>
                     <hr class="small">
                     <div class="row">
-                        <div class="col-md-4 col-md-offset-4 center-text">
+                        <div class="col-md-3 col-md-offset-3 center-text">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x text-primary"></i>
+                                </span>
+                                <h4>
+                                    <strong>Email</strong>
+                                </h4>
+                                <p>If you want to contact me</p>
+                                <a href="#" class="btn btn-light" data-toggle="modal" data-target="#emailModal">Get it</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 center-text">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
@@ -173,7 +186,11 @@
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Last Updated: March 2015</p>
+                    <p class="text-muted">Last Updated: April 2015</p>
+
+                    <hr class="small">
+                    <p class="text-muted">This website was built with template from <a href="http://startbootstrap.com/template-overviews/stylish-portfolio/" target="_blank"> StartBootsrap</a>. Wrangell Mountains photo credit for <a href="https://www.flickr.com/photos/42928188@N02/9482162912/" target="_blank">Jeremy Taylor</a>.</p>
+
                 </div>
             </div>
         </div>
@@ -189,6 +206,24 @@
           </div>
           <div class="modal-body">
             in the process of generating a secure key... , much more difficult than it appears to be ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-lg btn-dark" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Email Modal -->
+    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="emailModalLabel">My Email</h4>
+          </div>
+          <div class="modal-body">
+            <span style="font-size: 16px;">x@y, where x=me, and y=jamilshamy.me</span>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-lg btn-dark" data-dismiss="modal">Close</button>

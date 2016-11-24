@@ -1,0 +1,92 @@
+<!--==================================================================-->
+<!--Instance Groups-->
+<header ng-if="specs.instance_groups.length > 0">
+  <h3 class="section-header">
+    <a ng-click="specs.instance_groups.$folded = !specs.instance_groups.$folded;">
+
+      <span><strong>Instance Groups ({{specs.instance_groups.length}})</strong></span>
+    </a>
+  </h3>
+</header>
+
+<ul
+  class="operations"
+  collapse-when="specs.instance_groups.$folded"
+  ng-if="specs.instance_groups.length > 0">
+  <li
+    class="get operation"
+    ng-repeat="instanceGroup in specs.instance_groups">
+
+    <header
+      ng-click="instanceGroup.$folded = !instanceGroup.$folded;"
+      ng-if="instanceGroup.name"
+    >
+      <div
+        class='http-method'
+        class="toggleOperation">{{instanceGroup.name}}
+      </div>
+    </header>
+
+    <section class="description" ng-if="operation.description">
+      <h4>Description</h4>
+      <div marked="operation.description"></div>
+    </section>
+
+    <div
+      class='content'
+      collapse-when="instanceGroup.$folded"
+      ng-if="instanceGroup.name">
+      <div class="tags">
+        <span
+          class="tag"
+          ng-class="{'tag-color-0': instanceGroup.lifecycle==='errand', 'tag-color-2': instanceGroup.lifecycle!=='errand'}">
+          {{instanceGroup.lifecycle || "service"}}
+        </span>
+      </div>
+
+      <section class="parameters">
+        <h4>Info</h4>
+        <div>
+          <table class="params">
+            <thead>
+            <tr>
+              <th>Instances</th>
+              <th>VM Type</th>
+              <th>Stemcell</th>
+              <th>AZs</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>{{instanceGroup.instances}}</td>
+              <td>{{instanceGroup.vm_type}}</td>
+              <td>{{instanceGroup.stemcell}}</td>
+              <td><b ng-repeat="az in instanceGroup.azs">{{az}}{{$last ? '' : ', '}}</b></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="parameters" ng-if="instanceGroup.jobs && instanceGroup.jobs.length > 0">
+        <h4>Jobs</h4>
+        <div>
+          <table class="params">
+            <thead>
+            <tr>
+              <th>Name</th>
+              <th>Release</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="job in instanceGroup.jobs">
+              <td>{{job.name}}</td>
+              <td>{{job.release}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </li>
+</ul>
